@@ -119,21 +119,10 @@ let name;
         console.log(error);
     }
   };
-  exports.register = (req, res) => {
-    const { name, email, password, cpassword, userid, cid } = req.body;
+ exports.register = (req, res) => {
+    const { name, email, password, cpassword,eduqualf , insname,inspincode } = req.body;
   
-    if (
-      !(
-        cid.toLowerCase().includes("vec")  ||
-        (cid.includes("1132") ||cid.includes("5"))
-      )
-    ) {
-      return res.render("register", {
-        msg_type: "alert-danger",
-        msg: "Your authenticity that you belong to VEC is not verified, You must be a VECian to register!",
-      });
-    }
-  
+ 
     db.query(
       "SELECT email FROM users WHERE email = ?",
       [email],
@@ -160,8 +149,9 @@ let name;
             name: name,
             email: email,
             pass: hashedPassword,
-            category: userid,
-            cid: cid,
+            eduqualf: eduqualf,
+            insname: insname,
+            inspincode: inspincode,
           },
           (error, result) => {
             if (error) {
