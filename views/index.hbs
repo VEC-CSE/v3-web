@@ -61,7 +61,7 @@
             <div class="row g-0">
               <div class="col-md-6 col-lg-5 d-none d-md-block">
                 <img src="https://veclib.lavan.net.in/image/books-g5b0eb5412_1920.jpg"
-                  alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem;" />
+                  alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem;height:100%;" />
               </div>
               <div class="col-md-6 col-lg-7 d-flex align-items-center">
                 <div class="card-body p-4 p-lg-5 text-black">
@@ -78,8 +78,10 @@
                     {{#if msg}}
                     <p style="color:red;" class="{{msg_type}} alert alert-danger" role="alert">{{msg}}</p>
                     {{/if}}
+                    <br>
+                    <br>
                     <div class="form-outline mb-4">
-                      <input type="email" id="form2Example17" name="email" class="form-control form-control-lg" required />
+                      <input type="email" id="form2Example17" name="email" class="form-control form-control-lg" placeholder="name@example.com" required />
                       <label class="form-label" for="form2Example17">Email address</label>
                     </div>
   
