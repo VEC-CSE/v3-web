@@ -232,13 +232,15 @@ exports.logout = async (req, res) => {
       let lname=result[0];
       let name=lname.NAME;
       let email=lname.EMAIL;
-      let userid=lname.CATEGORY;
+      let insname=lname.INSNAME;
+      let inspincode=lname.INSPINCODE;
+      let eduqualf=lname.EDUQUALF;
       let logoutdate=new Date();
-      let cid=lname.CID;
+     
 
     db.query(
                       "insert into logout set ?",
-                      { name: name, email: email,logoutdate: logoutdate,category: userid,cid:cid},
+                      { name: name, email: email,logoutdate: logoutdate,insname: insname,inspincode:inspincode,eduqualf:eduqualf},
                       (error, result) => {
                         if (error) {
                           console.log(error);
