@@ -23,9 +23,9 @@ const db = mysql.createConnection({
     database: process.env.DATABASE,
   });
 
-  exports.login = async(req, res) => {
+ exports.login = async(req, res) => {
     try {
-        const { email, password,videolectures,nptel,slideshare,ndl,delnet,spokentutorial,blogspot,ejournal,ebooks,eshoudhsindhu,generalbookreference,newspaperandarticle} = req.body;
+        const { email, password} = req.body;
         // console.log(email);
         // console.log(password);
         // console.log(videolectures);
@@ -77,11 +77,13 @@ let name;
                 }
                 else {
                    // console.log(result);
-                   let category=result[0].CATEGORY;
-                   let cid=result[0].CID;
+                  
+                   let insname=result[0].insname;
+                   let inspincode=result[0].inspincode;
+                   let eduqualf=result[0].eduqualf;
                     db.query(
                       "insert into LOGIN set ?",
-                      { name: name, email: email,logintime: logintime, category: category,cid:cid},
+                      { name: name, email: email,logintime: logintime,insname:insname,inspincode:inspincode,eduqualf:eduqualf},
                       (error, result) => {
                         if (error) {
                           console.log(error);
