@@ -189,6 +189,7 @@ exports.isLoggedIn = async (req, res, next) => {
             return next();
           }
           req.user = results[0];
+          console.log(req.user);
           return next();
         }
       );
