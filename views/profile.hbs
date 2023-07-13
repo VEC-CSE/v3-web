@@ -1,6 +1,49 @@
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Primary Meta Tags -->
+<title>Profile</title>
+<meta name="title" content="Velammal Digi Lib">
+<meta name="description" content="This website is created by Lavan  team ,come and explore you can do lots and more stuff.">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://vec-cse-lib.lavan.net.in/">
+<meta property="og:title" content="Velammal Digi Lib">
+<meta property="og:description" content="This website is created by Lavan team ,come and explore you can do lots and more stuff.">
+<meta property="og:image" content="https://raw.githubusercontent.com/VEC-CSE/init-fronend/main/img/logo.jpg">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://vec-cse-lib.lavan.net.in/">
+<meta property="twitter:title" content="Velammal Digi Lib">
+<meta property="twitter:description" content="This website is created by Lavan team ,come and explore you can do lots and more stuff.">
+<meta property="twitter:image" content="https://raw.githubusercontent.com/VEC-CSE/init-fronend/main/img/logo.jpg">
+
+<!-- Font Awesome -->
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+  rel="stylesheet"
+/>
+<!-- Google Fonts -->
+<link
+  href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+  rel="stylesheet"
+/>
+<!-- MDB -->
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.css"
+  rel="stylesheet"
+/>
+
+<!-- MDB -->
+<script
+  type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.js"
+></script>
+
+
 <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
         c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
@@ -8,73 +51,93 @@
         y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "eiz3mun5pu");
 </script>
-<div class="container-fluid">
-  <div class="profile-card">
-    <div class="cover" style="background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/584938/bg_22.png)"></div>
-    <div class="body"><img class="profile-picture" src="https://vec-cse.github.io/init-fronend/img/4965791_50426.jpg"/>
-      <h3 class="user-name">{{user.NAME}}({{user.CID}})<br></h3><span class="user-position">Position: {{user.CATEGORY}} @ VEC</span>
-<br>
-      <p class="location">Email: {{user.EMAIL}}</p>
-      <div class="social"></div>
-    </div>
-  </div>
-</div>
-<style>
-body {
-  background-color: #edf2f7;
-  color: #405983;
-  font-family: "Open Sans";
-}
-.container-fluid {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translateY(-50%) translateX(-50%);
-  width: 100%;
-}
-.profile-card {
-  background-color: white;
-  border-radius: 6px;
-  box-shadow: 1px 1px 3px -1px rgba(0, 0, 0, 0.9);
-  margin: 0 auto;
-  overflow: hidden;
-  text-align: center;
-  width: 320px;
-}
-.cover {
-  background-size: cover;
-  background-position: center;
-  height: 200px;
-}
-.profile-picture {
-  border: 5px solid white;
-  border-radius: 50%;
-  box-shadow: 0px 0px 5px -2px black;
-  margin-bottom: -57px;
-  transform: translateY(-50%);
-  width: 115px;
-}
-.user-position {
-  position: relative;
-  margin: 0 7px;
-  font-weight: 500;
-}
-.location {
-  margin-top: 0;
-}
-.social {
-  font-size: 20px;
-  margin-top: 30px;
-  padding-bottom: 10px;
-}
-.social a {
-  color: #405983;
-  margin: 0 5px;
-}
-.social a:focus,
-.social a:hover,
-.social a:visited {
-  text-decoration: none;
-}
+<link rel="icon" type="image/x-icon" href="https://veclib.lavan.net.in/assets/favicon.png">
+</head>
+<body style="background-color: #eeeeee;">
+    
 
-</style>
+<section style="background-color: #eee;">
+    <div class="container py-5">
+      <div class="row">
+        <div class="col">
+          <nav aria-label="breadcrumb" class="bg-light rounded-3 p-3 mb-4">
+            <ol class="breadcrumb mb-0">
+              <li class="breadcrumb-item"><a href="/home">Home</a></li>
+             
+              <li class="breadcrumb-item active" aria-current="page">User Profile</li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+  
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="card mb-4">
+            <div class="card-body text-center">
+              <img src="https://veclib.lavan.net.in/image/kindpng_1300240.png" alt="avatar"
+                class="rounded-circle img-fluid" style="width: 150px;">
+              <h5 class="my-3">{{user.NAME}}</h5>
+              <p class="text-muted mb-1">{{user.EDUQUALF}}</p>
+              
+            </div>
+          </div>
+        
+        </div>
+        <div class="col-lg-8">
+          <div class="card mb-4">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-sm-3">
+                  <p class="mb-0">Full Name</p>
+                </div>
+                <div class="col-sm-9">
+                  <p class="text-muted mb-0">{{user.NAME}}</p>
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col-sm-3">
+                  <p class="mb-0">Educational Qualification</p>
+                </div>
+                <div class="col-sm-9">
+                  <p class="text-muted mb-0">{{user.EDUQUALF}}</p>
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col-sm-3">
+                  <p class="mb-0">Email Address</p>
+                </div>
+                <div class="col-sm-9">
+                  <p class="text-muted mb-0">{{user.EMAIL}}</p>
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col-sm-3">
+                  <p class="mb-0">Institution Name</p>
+                </div>
+                <div class="col-sm-9">
+                  <p class="text-muted mb-0">{{user.INSNAME}}</p>
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col-sm-3">
+                  <p class="mb-0">Institution Pincode</p>
+                </div>
+                <div class="col-sm-9">
+                  <p class="text-muted mb-0">{{user.INSPINCODE}}</p>
+                </div>
+              </div>
+              
+         
+            </div>
+          </div>
+     
+        </div>
+      </div>
+    </div>
+  </section>
+
+</body>
