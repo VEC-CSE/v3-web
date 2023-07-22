@@ -4,6 +4,7 @@ const async = require("hbs/lib/async");
 const jwt = require("jsonwebtoken");
 const { promisify } = require("util");
 const nodemailer = require("nodemailer");
+const email_verifier = require('email-verifier-node');
 const transporter = nodemailer.createTransport({
   host: process.env.EMAIL_HOST,
   port: process.env.EMAIL_PORT,
@@ -141,9 +142,23 @@ let name;
           return res.render("register", {
             msg_type: "alert-danger",
             msg: "Password does not match!",
-          });
-        }
+          });}
+
   
+   
+            email_verifier.verify_email(email)
+            .then( async result => {
+               
+                if(!(result.is_verified)){
+                  console.log(result)
+                  return res.render("register", {
+                    
+                    msg_type: "alert-danger",
+                    msg: "Entered email: "+email+" does not exist!",
+                  });
+                }
+                else{
+                  
         let hashedPassword = await bcrypt.hash(password, 8);
         db.query(
           "INSERT INTO users SET ?",
@@ -166,9 +181,16 @@ let name;
             }
           }
         );
+                }
+                
+            })
+        
+        
+
       }
     );
   };
+  
   
 exports.isLoggedIn = async (req, res, next) => {
   //req.name = "Check Login....";
