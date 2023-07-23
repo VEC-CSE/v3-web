@@ -142,23 +142,9 @@ let name;
           return res.render("register", {
             msg_type: "alert-danger",
             msg: "Password does not match!",
-          });}
-
+          });
+        }
   
-   
-            email_verifier.verify_email(email)
-            .then( async result => {
-               
-                if(!(result.is_verified)){
-                  console.log(result)
-                  return res.render("register", {
-                    
-                    msg_type: "alert-danger",
-                    msg: "Entered email: "+email+" does not exist!",
-                  });
-                }
-                else{
-                  
         let hashedPassword = await bcrypt.hash(password, 8);
         db.query(
           "INSERT INTO users SET ?",
@@ -181,16 +167,9 @@ let name;
             }
           }
         );
-                }
-                
-            })
-        
-        
-
       }
     );
   };
-  
   
 exports.isLoggedIn = async (req, res, next) => {
   //req.name = "Check Login....";
