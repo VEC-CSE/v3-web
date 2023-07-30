@@ -27,6 +27,14 @@ router.get("/profile", userContoller.isLoggedIn, (req,res) => {
     res.render("./");
       }
 });
+router.get("/digichat", userContoller.isLoggedIn, (req,res) => {
+   
+  if (req.user) {
+      res.render("digichat", { user: req.user });
+    } else {
+  res.render("./");
+    }
+});
 router.get("/home", userContoller.isLoggedIn, (req,res) => {
    
     if (req.user) {
