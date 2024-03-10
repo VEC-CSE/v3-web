@@ -416,7 +416,7 @@ exports.forgot = async (req, res) => {
             }
 
             // Send the password reset email
-            const resetLink = `https://vecdigilib.lavan.net.in/reset-password/${resetToken}`; // Replace with your own website URL
+            const resetLink = `https://coffee-salmon-veil.cyclic.app/reset-password/${resetToken}`; // Replace with your own website URL
             const mailOptions = {
               from: 'vecdigilib-reset@lavanmail.lavan.net.in',
               to: email,
